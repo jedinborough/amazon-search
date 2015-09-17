@@ -2,25 +2,22 @@
 
 require 'mechanize'
 
-###########################################
-# Select Amazon search form and submit
-# the search criteria
-###########################################
+puts """
+Example usage: 
 
-agent = Mechanize.new
-main_page = agent.get("http://amazon.com")
-search_form = main_page.form_with :name => "site-search"
+    search \"books\"
+    search \"Enders Game\" 
+    search \"Rolex\"  
 
-keywords = ARGV[0] # asks for search terms
+"""
 
-if ARGV[0] # did user enter in search keywords?
+def search(keywords)
+    agent = Mechanize.new
+    main_page = agent.get("http://amazon.com")
+    search_form = main_page.form_with :name => "site-search" # find the search form in Amazon
+
     search_form.field_with(:name => "field-keywords").value = keywords # sets value of search box
     search_results = agent.submit search_form # submits form
-
-    ###########################################
-    # Cycle through all result pages
-    # and list product links
-    ###########################################
 
     next_page = agent.get(search_results.uri) # initial search results are the first page
 
@@ -99,17 +96,4 @@ if ARGV[0] # did user enter in search keywords?
     end # ends pagination loop
 
     puts "\n\n(end of search results)"
-
-else # user didn't enter search keywords
-
-STDOUT.puts <<-EOF
-Please provide search keywords
-
-Example Usage: 
-  amazon-search watches
-  amazon-search books
-  amazon-search games
-
-EOF
-
-end # ends ARGV if statement
+end
