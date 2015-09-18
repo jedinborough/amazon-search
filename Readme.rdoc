@@ -1,0 +1,28 @@
+== amazon-search
+
+Amazon Search is a simple Ruby tool to search for Amazon products.
+
+This is a tool that does not require configuration of Amazon's API.  The functionality is centered around mechanize pagination for the screen scraping of nokogiri elements.  XML and CSS selectors are currently being used.  In the event that Amazon updates their site, the selectors will need to be updated.
+
+== INSTALLATION
+
+  $ gem install amazon-search
+
+== EXAMPLE
+
+    require 'amazon/search'
+    
+    # Search for products by keywords and store results
+    Amazon::Search.find_products "ruby"
+
+
+    # puts results
+    Amazon::Search.display_results
+    
+== MIT LICENSE
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

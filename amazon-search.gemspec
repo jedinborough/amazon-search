@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'amazon-search'
-  s.version     = '1.1.4'
+  s.version     = Amazon::Search::VERSION
   s.date        = '2015-09-17'
 
   s.summary     = "A simple screenscraper to search Amazon"
@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.email       = 'mace2345@gmail.com'
 
 
-  s.files       = ["lib/amazon-search.rb"]
+  s.files       = `git ls-files`.split("\n")
   s.homepage    = 'https://github.com/m8ss/amazon-search'
 
   s.license       = 'MIT'
