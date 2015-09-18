@@ -5,8 +5,8 @@ require 'mechanize'
 module Amazon
 
 class Search
-    VERSION = '1.1.5'
-    
+    VERSION = '1.1.6'
+
     def self.find_products(keywords)
         #--------- submit the search form with keywords ---------------------
         agent = Mechanize.new
