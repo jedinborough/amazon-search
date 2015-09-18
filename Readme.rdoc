@@ -22,7 +22,7 @@ This is a tool that does not require configuration of Amazon's API.  The functio
 
 == GOTCHAS
 
-If you are unable to establish an HTTPS connection, this program will not work.   Working on getting a fix soon.
+If you are unable to establish an HTTPS connection, this program will not work.   503 errors will occur and the search will fail.  90% of the time, a simply retry will fix the issue.  Working on getting a fix soon!
     
 == MIT LICENSE
 
