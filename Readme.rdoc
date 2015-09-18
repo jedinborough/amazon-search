@@ -22,7 +22,7 @@ This is a tool that does not require configuration of Amazon's API.  The functio
 
 == GOTCHAS
 
-If you are unable to establish an HTTPS connection, this program will not work.   503 errors will occur and the search will fail.  90% of the time, a simply retry will fix the issue.  Working on getting a fix soon!
+Sometimes a 503 error occurs due to the pagination scanning too quickly and overloading the server.  An option will come out in the future to customize how long to sleep before requesting next page of search results.  In the meantime, a simple retry will often work.
     
 == MIT LICENSE
 
