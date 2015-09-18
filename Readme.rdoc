@@ -10,7 +10,7 @@ This is a tool that does not require configuration of Amazon's API.  The functio
 
 == EXAMPLE
 
-    require 'amazon/search'
+    require 'amazon-search'
     
     # Search for products by keywords and store results
     Amazon::Search.find_products "ruby"
