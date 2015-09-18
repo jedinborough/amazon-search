@@ -1,19 +1,27 @@
-Gem::Specification.new do |s|
-  s.name        = 'amazon-search'
-  s.version     = Amazon::Search::VERSION
-  s.date        = '2015-09-17'
+# -*- encoding: utf-8 -*-
+$:.push File.expand_path("../lib", __FILE__)
+require 'amazon/search'
 
-  s.summary     = "A simple screenscraper to search Amazon"
-  s.description = "Simple screenscraper to search Amazon and return product titles, urls, image href, etc."
+Gem::Specification.new do |gem|
+  gem.name        = %q{amazon-search}
+  gem.version     = Amazon::Search::VERSION
+  gem.date        = '2015-09-18'
 
-  s.authors     = ["John Mason"]
-  s.email       = 'mace2345@gmail.com'
+  gem.summary     = "A simple screenscraper to search Amazon"
+  gem.description = "Simple screenscraper to search Amazon and return product titles, urls, image href, etc."
 
+  gem.authors     = ["John Mason"]
+  gem.email       = 'mace2345@gmail.com'
 
-  s.files       = `git ls-files`.split("\n")
-  s.homepage    = 'https://github.com/m8ss/amazon-search'
+  gem.files = Dir['lib/   *.rb'] + Dir['bin/*']
+  gem.files += Dir['[A-Z]*'] + Dir['test/**/*']
+  gem.require_paths = ["lib"]
+  gem.homepage    = 'https://github.com/m8ss/amazon-search'
 
-  s.license       = 'MIT'
+  gem.license       = 'MIT'
 
-  s.add_runtime_dependency('mechanize',    '~> 2.7')
+  gem.add_runtime_dependency('mechanize',    '~> 2.7')
 end
+
+
+
