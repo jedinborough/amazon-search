@@ -15,7 +15,7 @@ class Search
         search_results = agent.submit search_form # submits form
 
         #--------- scan each page and store the results ---------------------
-        @product_divs = []
+        $product_divs = []
         page_num = 0
         next_page = agent.get(search_results.uri) # initial search results are the first page
 
@@ -26,7 +26,7 @@ class Search
             page_num += 1
             page = agent.get(next_page.uri) # load the next page
             
-            @product_divs << page.search('//li[starts-with(@id, "result")]') # store the div of each product
+            $product_divs << page.search('//li[starts-with(@id, "result")]') # store the div of each product
            
             next_page_link = page.link_with text: /Next Page/ # find the next page link   
             next_page = next_page_link.click unless page_num == last_page_num # click to next page unless on last page
