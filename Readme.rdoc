@@ -12,12 +12,17 @@ This is a tool that does not require configuration of Amazon's API.  The functio
 
     require 'amazon-search'
     
-    # Search for products by keywords and store results
+    # Search for products by keyword string and store results
     Amazon::Search.find_products "ruby"
+    Amazon::Search.find_products "books"
+    Amazon::Search.find_products "games"
 
-
-    # puts results
+    # After a search is complete, run this command
     Amazon::Search.display_results
+
+== GOTCHAS
+
+If you are unable to establish an HTTPS connection, this program will not work.   Working on getting a fix soon.
     
 == MIT LICENSE
 
