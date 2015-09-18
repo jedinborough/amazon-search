@@ -34,6 +34,7 @@ class Search
         end # ends pagination loop
 
         puts "\n\n(end of search results)"
+        sleep(1) # don't overload the servers
     end
 
 
