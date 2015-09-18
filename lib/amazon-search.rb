@@ -7,7 +7,8 @@ module Amazon
 class Search
     def self.find_products(keywords)
         #--------- submit the search form with keywords ---------------------
-        agent = Mechanize.new
+        agent = Mechanize.new{ |a|  a.user_agent_alias = "Mac Safari"} # set browser
+
         main_page = agent.get("http://amazon.com")
         search_form = main_page.form_with :name => "site-search" # find the search form in Amazon
 
