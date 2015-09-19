@@ -20,7 +20,7 @@ module Amazon
             STDOUT.puts "price: \t\t#{$price}"
             STDOUT.puts "stars: \t\t#{$stars}"
             STDOUT.puts "reviews: \t#{$reviews}"
-            STDOUT.puts "image url: \t#{$image}"
+            STDOUT.puts "image url: \t#{$image_href}"
             STDOUT.puts "product url: \t#{$url}"
         end
 

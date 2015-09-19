@@ -2,7 +2,7 @@
 
 require 'mechanize'
 require './amazon-search/form'
-require './amazon-search/pages'
+require './amazon-search/scan'
 require './amazon-search/products'
 
 module Amazon
@@ -14,6 +14,8 @@ module Amazon
             find_form
             submit_form
             scan
+
+            $products
         end
     end
 end

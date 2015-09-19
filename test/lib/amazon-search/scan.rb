@@ -39,11 +39,13 @@ module Amazon
             $last_pagenum.times do # paginate until on last page.
 
                 examine_current_pagenum
+                puts "\nscanning page #{$current_pagenum} of #{$last_pagenum} @ #{$main_page.uri+$current_page.uri}"
 
                 $current_divs = $current_page.search('//li[starts-with(@id, "result")]')
                 $pages[$page_num] = $current_divs # store page results
 
                 extract_product_data
+
                 load_next_page
 
             end
