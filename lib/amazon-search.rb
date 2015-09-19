@@ -1,9 +1,9 @@
 #!/usr/bin/env ruby
 
 require 'mechanize'
-require './amazon-search/form'
-require './amazon-search/scan'
-require './amazon-search/products'
+require 'amazon-search/form'
+require 'amazon-search/scan'
+require 'amazon-search/products'
 
 module Amazon
     class << self
