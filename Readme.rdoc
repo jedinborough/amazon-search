@@ -19,18 +19,21 @@ This is tool screenscrapes an Amazon search and returns a hash of the product re
     Amazon::search "ruby"
 
 
-    # search results are stored in global variable: $products
+    # search results are stored in global variable:
+    $products
+
+
     # reference any product by the order it appeared in search results
 
-    $products[0] 				# => references the first product returned in search
+    $products[0] # => references the first product returned in search
 
 
     # reference any product by the order it appeared in search results
     # and display attributes of that product
     # all available attributes are:
 
-    $products[0][:title] 		# => the first product's title
-    $products[0][:price] 		# etc...
+    $products[0][:title] # => the first product's title
+    $products[0][:price] # etc...
     $products[0][:stars] 
     $products[0][:reviews] 
     $products[0][:image_href]
@@ -48,7 +51,7 @@ This is tool screenscrapes an Amazon search and returns a hash of the product re
 
     # Iterate over all search results and return specific attributes
     $products.each do |x|
-    	product = x[1] 			# index into array before keying hash
+    	product = x[1] # index into array before keying hash
     	puts product[:title]
     	puts product[:stars]
 	end
