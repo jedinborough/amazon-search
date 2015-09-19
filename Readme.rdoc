@@ -6,7 +6,7 @@ This tool screenscrapes an Amazon search and returns a hash of the product resul
 
 The functionality is centered around mechanize pagination for the screen scraping of nokogiri elements.  XML and CSS selectors are currently being used.  In the event that Amazon updates their site, the selectors will need to be updated.
 
-== PRODUCT INFO RETURNED FROM A SEARCH
+== DATA COLLECTED
 * title
 * price
 * stars
