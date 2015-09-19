@@ -56,13 +56,13 @@ The functionality is centered around mechanize pagination for the screen scrapin
 
 
     # Iterate over all search results and return specific attributes
-
+	```ruby
     $products.each do |x|
     	product = x[1] # index into array before keying hash
     	puts product[:title]
     	puts product[:stars]
-		end
-
+	end
+	```
     
 == MIT LICENSE
 
