@@ -9,6 +9,7 @@ This is tool screenscrapes an Amazon search and returns a hash of the product re
 
   $ gem install amazon-search
 
+
 == EXAMPLE
 
     require 'amazon-search'
@@ -21,7 +22,7 @@ This is tool screenscrapes an Amazon search and returns a hash of the product re
     # search results are stored in global variable: $products
     # reference any product by the order it appeared in search results
 
-    $products[0] # => reference the first product returned in search
+    $products[0] 				# => references the first product returned in search
 
 
     # reference any product by the order it appeared in search results
