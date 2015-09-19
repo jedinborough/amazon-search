@@ -2,8 +2,8 @@
 
 Gem::Specification.new do |gem|
   gem.name        = %q{amazon-search}
-  gem.version     = '1.2.2'
-  gem.date        = '2015-09-18'
+  gem.version     = '1.3.0'
+  gem.date        = '2015-09-19'
   gem.platform = Gem::Platform::RUBY
   gem.required_ruby_version = '>= 1.8'
 

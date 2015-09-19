@@ -1,5 +1,5 @@
 require 'mechanize'
-require_relative './pages'
+require_relative './scan'
 require_relative './products'
 
 module Amazon
