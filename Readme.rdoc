@@ -2,7 +2,8 @@
 
 Amazon Search is a simple Ruby tool to search for Amazon products.
 
-This is a tool that does not require configuration of Amazon's API.  The functionality is centered around mechanize pagination for the screen scraping of nokogiri elements.  XML and CSS selectors are currently being used.  In the event that Amazon updates their site, the selectors will need to be updated.
+This is tool screenscrapes an Amazon search and returns a hash of the product results. This does not require configuration of Amazon's API.  The functionality is centered around mechanize pagination for the screen scraping of nokogiri elements.  XML and CSS selectors are currently being used.  In the event that Amazon updates their site, the selectors will need to be updated.
+
 
 == INSTALLATION
 
@@ -12,9 +13,45 @@ This is a tool that does not require configuration of Amazon's API.  The functio
 
     require 'amazon-search'
     
-    # Search for products by string
-    
+    # search for products by string
+
     Amazon::search "ruby"
+
+
+    # search results are stored in global variable: $products
+    # reference any product by the order it appeared in search results
+
+    $products[0] # => reference the first product returned in search
+
+
+    # reference any product by the order it appeared in search results
+    # and display attributes of that product
+    # all available attributes are:
+
+    $products[0][:title] 		# => the first product's title
+    $products[0][:price] 		# etc...
+    $products[0][:stars] 
+    $products[0][:reviews] 
+    $products[0][:image_href]
+    $products[0][:url]
+    $products[0][:seller] 
+
+
+    # Save search results in order to execute another search
+    # method 1)
+    example_search = Amazon::search "ruby" 
+
+    # method 2)
+    example_search = $products # => only works after search has been done
+
+
+    # Iterate over all search results and return specific attributes
+    $products.each do |x|
+    	product = x[1] 			# index into array before keying hash
+    	puts product[:title]
+    	puts product[:stars]
+	end
+
     
 == MIT LICENSE
 
