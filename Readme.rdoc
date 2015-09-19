@@ -12,17 +12,9 @@ This is a tool that does not require configuration of Amazon's API.  The functio
 
     require 'amazon-search'
     
-    # Search for products by keyword string and store results
-    Amazon::Search.find_products "ruby"
-    Amazon::Search.find_products "books"
-    Amazon::Search.find_products "games"
-
-    # After a search is complete, run this command
-    Amazon::Search.display_results
-
-== GOTCHAS
-
-Sometimes a 503 error occurs due to the pagination scanning too quickly and overloading the server.  An option will come out in the future to customize how long to sleep before requesting next page of search results.  In the meantime, a simple retry will often work.
+    # Search for products by string
+    
+    Amazon::search "ruby"
     
 == MIT LICENSE
 
