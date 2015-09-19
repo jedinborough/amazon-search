@@ -7,6 +7,7 @@ require 'amazon-search/products'
 
 module Amazon
     class << self
+        # main method: process Amazon search
         def search(keywords)
             $keywords = keywords 
 

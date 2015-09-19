@@ -12,7 +12,7 @@ module Amazon
          !!Float(s) rescue false
         end
 
-        # currently not being used and needs adjusting  
+        # puts product details to console
         def display_product
             STDOUT.puts "--"*50
             STDOUT.puts "title: \t\t#{$title}"
