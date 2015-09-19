@@ -44,12 +44,13 @@ module Amazon
                 $current_divs = $current_page.search('//li[starts-with(@id, "result")]')
                 $pages[$page_num] = $current_divs # store page results
 
+                extract_product_data
+
                 load_next_page
 
             end
 
             puts "\n(scan complete.)"
-            $pages
         end 
     end
 

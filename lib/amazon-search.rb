@@ -14,6 +14,8 @@ module Amazon
             find_form
             submit_form
             scan
+
+            $products
         end
     end
 end
