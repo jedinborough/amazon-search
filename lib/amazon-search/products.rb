@@ -7,6 +7,11 @@ module Amazon
         $products = {}
         $product_num = 0
 
+        # used for checking strings
+        def is_numeric?(s)
+         !!Float(s) rescue false
+        end
+
         # currently not being used and needs adjusting  
         def display_product
             STDOUT.puts "--"*50
@@ -21,7 +26,6 @@ module Amazon
 
         # extract product data
         def extract_product_data
-            puts "***started extract method***"
             
             # nokogiri syntax is needed when iterating...not mechanize!
             # extract useful stuff from product html
@@ -43,9 +47,16 @@ module Amazon
                 $title = title.text      
                 $price = price.text
                 $stars = stars.text
-                $reviews = reviews.text
                 $image_href = image_href['src'] 
                 $url = url['href']
+
+                # movies sometimes have text in review class
+                if is_numeric?(reviews.text)
+                    $reviews = reviews.text
+                else
+                    $reviews = "Unknown"
+                end
+
                 if seller == nil # sometimes seller is nil on movies, etc.
                     $seller = "Unknown"
                 else
@@ -53,7 +64,9 @@ module Amazon
                 end
 
                 # don't overload the server
-                sleep(1)
+                sleep(0.05)
+
+                display_product
 
                 # store extracted text in products hash
                 # key is product count
@@ -69,8 +82,6 @@ module Amazon
 
                 $product_num +=1 # ready for next product
             end
-
-            puts "***ending extract method***"
         end
     end
 end
