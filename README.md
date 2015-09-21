@@ -4,7 +4,7 @@ Amazon Search is a simple Ruby tool to search for Amazon products.
 
 This tool screenscrapes an Amazon search and returns a hash of the product results. Configuration of Amazon's API is not needed.
 
-The functionality is centered around mechanize pagination for the screen scraping of nokogiri elements.  XML and CSS selectors are currently being used.  In the event that Amazon updates their site, the selectors will need to be updated.
+The functionality is centered around mechanize pagination for the screen scraping of nokogiri elements.  XPath and CSS selectors are currently being used.  In the event that Amazon updates their site, the selectors will need to be updated.
 
 ## DATA COLLECTED
 * title
