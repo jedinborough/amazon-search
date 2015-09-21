@@ -38,7 +38,7 @@ The functionality is centered around mechanize pagination for the screen scrapin
 
 
     # reference any product by the order it appeared in search results
-    
+
 
     $products[0] # => references the first product found in search
     $products[30] # => references the 29th product found in search
@@ -76,7 +76,7 @@ The functionality is centered around mechanize pagination for the screen scrapin
 ```
 	
     
-== MIT LICENSE
+## MIT LICENSE
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
