@@ -73,6 +73,7 @@ The functionality is centered around mechanize pagination for the screen scrapin
     	puts product[:title]
     	puts product[:stars]
     	# etc ...
+    end
 ```
 	
     
