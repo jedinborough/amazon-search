@@ -9,12 +9,12 @@ module Amazon
     # main method: process Amazon search
     def search(keywords)
       @keywords = keywords
-
       set_agent
       find_form
       submit_form
       scan
-
+      puts 'ready to return products?'
+      gets
       @products
     end
 
@@ -60,7 +60,6 @@ module Amazon
       # find next page link
       @next_page_link = @current_page.link_with text: /Next Page/
       @next_page = @next_page_link.click unless @current_pagenum == @last_pagenum
-
       @current_page = @agent.get(@next_page.uri)
     end
 
@@ -82,10 +81,6 @@ module Amazon
       puts "\n(scan complete.)"
     end
 
-    # TODO: fix this global variable...
-    @products = {}
-    @product_num = 0
-
     # used for checking strings
     def numeric?(s)
       !!Float(s) rescue false
@@ -105,6 +100,10 @@ module Amazon
 
     # extract product data
     def extract_product_data
+      # TODO: fix this global variable...
+      @products = {}
+      @product_num = 0
+
       # nokogiri syntax is needed when iterating...not mechanize!
       # extract useful stuff from product html
       @current_divs.each do |html|
